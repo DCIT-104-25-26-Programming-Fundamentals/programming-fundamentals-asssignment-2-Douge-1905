@@ -57,3 +57,59 @@
 #include <iostream>
 using namespace std;
 
+void singleTable(int number)
+{
+    cout << "Multiplication Table for " << number << ":" << endl;
+
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << number << "  x  " << i << "  =  " << number * i << endl;
+    }
+}
+
+void tablesFromOneToN(int n)
+{
+    for (int number = 1; number <= n; number++)
+    {
+        cout << "Multiplication Table for " << number << ":" << endl;
+
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << number << "  x  " << i << "  =  " << number * i << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
+
+int main()
+{
+    int number;
+    int n;
+
+    cout << "Enter a number for single table: ";
+    cin >> number;
+
+    if (number <= 0)
+    {
+        cout << "Error: Number must be positive." << endl;
+        return 0;
+    }
+
+    singleTable(number);
+
+    cout << endl;
+
+    cout << "Enter N for tables from 1 to N: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: Number must be positive." << endl;
+        return 0;
+    }
+
+    tablesFromOneToN(n);
+
+    return 0;
+}
